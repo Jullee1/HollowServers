@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HollowServers - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="base.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="hollowserverslogo.png" alt="Logo" class="logo" />
+      <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-content">
+      <h1>Welcome, Staff-Member</h1>
+      <p class="subtext">Choose what tab you'd like to go to:</p>
+
+      <div class="card-grid">
+        <a href="serverinfo.html" class="card">
+          <h3>Server Info</h3>
+        </a>
+        <a href="responses.html" class="card">
+          <h3>Common Responses</h3>
+        </a>
+        <a href="customqa.html" class="card">
+          <h3>Custom Q/A's</h3>
+        </a>
+        <div class="card disabled">
+          <h3>More coming soon!</h3>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>HollowServers Moderation Tool - Made by: Jullee</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+
+
+</html>

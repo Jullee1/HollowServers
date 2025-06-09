@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HollowServers - Server Info</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="serverinfo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="hollowserverslogo.png" alt="Logo" class="logo" />
+      <button class="back-button" onclick="goHome()">Back to home</button>
+    </div>
+  </header>
+
+<main>
+  <div class="main-content">
+    <h1>Server Information</h1>
+    <p class="subtext">Click a region to view its servers, press on a server to take screenshot of it</p>
+
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab('us')">US</button>
+      <button class="tab-btn" onclick="showTab('eu')">EU</button>
+      <button class="tab-btn" onclick="showTab('au')">AU</button>
+    </div>
+
+    <div id="server-tabs">
+      <!-- US SERVERS -->
+<div class="tab-content-wrapper active">
+        <div class="tab-content" id="us-tab">
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Duo</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Sunday & Thursday @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Duo Monthly</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Force Wipe @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Trio</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Monday & Friday @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Trio Monthly</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Force Wipe @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Quad</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Quad Monthly</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Force Wipe @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Duo</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Duo Monthly</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Force Wipe @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Trio</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Quad</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Quad Monthly</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Force Wipe @ 2PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge5x">5X No BPs</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Tuesday & Friday @ 3PM EST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge10x">10X No BPs</div>
+          <h3>Region: US</h3>
+          <p>Wipes: Tuesday & Friday @ 3PM EST</p>
+        </div>
+        <div class="screenshot-all-btn-wrapper">
+          <button class="screenshot-all-btn" onclick="captureTab('us-tab')">📸 Take screenshot of the US Servers</button>
+        </div>
+      </div>
+      </div>
+
+      <!-- EU SERVERS -->
+      <div class="tab-content-wrapper">
+        <div class="tab-content" id="eu-tab">
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Duo</div>
+          <h3>Region: EU</h3>
+          <p>Wipes: Sunday & Thursday @ 2PM GMT</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Trio</div>
+          <h3>Region: EU</h3>
+          <p>Wipes: Monday & Friday @ 2PM GMT</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge2x">2X Quad</div>
+          <h3>Region: EU</h3>
+          <p>Wipes: Wednesday & Saturday @ 2PM GMT</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Duo</div>
+          <h3>Region: EU</h3>
+          <p>Wipes: Sunday & Thursday @ 2PM GMT</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Trio</div>
+          <h3>Region: EU</h3>
+          <p>Wipes: Monday & Friday @ 2PM GMT</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Quad</div>
+          <h3>Region: EU</h3>
+          <p>Wipes: Wednesday & Saturday @ 2PM GMT</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge10x">10X No BPs</div>
+          <h3>Region: EU</h3>
+          <p>Wipes: Wednesday & Saturday @ 2PM GMT</p>
+        </div>
+        <div class="screenshot-all-btn-wrapper">
+          <button class="screenshot-all-btn" onclick="captureTab('eu-tab')">📸 Take screenshot of the EU Servers</button>
+        </div>
+      </div>
+
+      <!-- AU SERVERS -->
+      <div class="tab-content-wrapper">
+        <div class="tab-content" id="au-tab">
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Trio</div>
+          <h3>Region: AU</h3>
+          <p>Wipes: Monday & Friday @ 3PM AEST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge3x">3X Quad</div>
+          <h3>Region: AU</h3>
+          <p>Wipes: Wednesday & Saturday @ 3PM AEST</p>
+        </div>
+        <div class="server-card" onclick="captureCard(this)">
+          <div class="badge10x">10X No BPs</div>
+          <h3>Region: AU</h3>
+          <p>Wipes: Monday & Friday @ 2PM AEST</p>
+        </div>
+        <div class="screenshot-all-btn-wrapper">
+          <button class="screenshot-all-btn" onclick="captureTab('au-tab')">📸 Take screenshot of the AU Servers</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+  <footer>
+    <p>HollowServers Moderation Tool - Made by: Jullee</p>
+  </footer>
+<script src="serverinfo.js"></script>
+</body>
+</html>
