@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HollowServers - Custom Q&A</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="customqna.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="hollowserverslogo.png" alt="Logo" class="logo" />
+      <button class="back-button" onclick="goHome()">Back to home</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+  <h1>Custom Q&A</h1>
+  <p class="subtext">Manage your frequently asked questions below</p>
+
+  <div class="form-wrapper">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="🔍 Search questions..."
+      class="search-bar"
+    />
+
+    <div class="backup-buttons">
+      <button id="export-btn">Export Q/A</button>
+      <input type="file" id="import-file" accept=".json" hidden />
+      <button id="import-btn">Import Q/A</button>
+    </div>
+
+    <div id="faq-list" class="faq-list"></div>
+
+    <form id="add-faq-form" class="faq-form">
+      <input type="text" id="question-input" placeholder="Question" required />
+      <textarea id="answer-input" placeholder="Answer" required></textarea>
+      <button type="submit">Add Q/A</button>
+    </form>
+  </div>
+</main>
+
+  <footer>
+    <p>HollowServers Moderation Tool - Made by: Jullee</p>
+  </footer>
+
+  <script src="customqna.js"></script>
+</body>
+</html>
