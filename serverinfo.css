@@ -319,3 +319,15 @@ footer {
   font-size: 14px;
 }
 
+.wipe-today-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: rgb(187, 186, 110);
+  color: rgb(255, 255, 255);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 0 0 0 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}

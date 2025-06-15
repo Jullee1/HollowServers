@@ -172,3 +172,22 @@ document.addEventListener('click', function (e) {
     captureCard(card);
   }
 });
+
+// Highlight servers that wipe today
+document.querySelectorAll(".server-card").forEach(card => {
+  const wipeInfo = card.querySelector(".wipe-info");
+  if (!wipeInfo) return;
+
+  const wipeDays = wipeInfo.dataset.wipe?.toLowerCase();
+  if (!wipeDays) return;
+
+  const today = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
+  if (wipeDays.includes(today)) {
+    if (!card.querySelector(".wipe-today-badge")) {
+      const badge = document.createElement("div");
+      badge.className = "wipe-today-badge";
+      badge.textContent = "WIPE TODAY";
+      card.appendChild(badge);
+    }
+  }
+});
