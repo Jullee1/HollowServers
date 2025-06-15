@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HollowServers - Server Info</title>
-  <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="serverinfo.css" />
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
@@ -19,7 +18,8 @@
 <main>
   <div class="main-content">
     <h1>Server Information</h1>
-    <p class="subtext">Click a region to view its servers, press on a server to take screenshot of it</p>
+    <p class="subtext">Click a region to view its servers. Hold <strong>Shift</strong> and click a server to take a screenshot.</p>
+    <p class="subtext" style="color: #bbb; font-size: 0.95em;">Click on an IP to copy <code>connect &lt;ip&gt;</code> to your clipboard</p>
 
     <div class="tab-buttons">
       <button class="tab-btn active" onclick="showTab('us')">US</button>
@@ -31,70 +31,96 @@
       <!-- US SERVERS -->
 <div class="tab-content-wrapper active">
         <div class="tab-content" id="us-tab">
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Duo</div>
           <h3>Region: US</h3>
           <p>Wipes: Sunday & Thursday @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="11590385">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Duo Monthly</div>
           <h3>Region: US</h3>
           <p>Wipes: Force Wipe @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="16119265">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Trio</div>
           <h3>Region: US</h3>
           <p>Wipes: Monday & Friday @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="9890273">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Trio Monthly</div>
           <h3>Region: US</h3>
           <p>Wipes: Force Wipe @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="16230048">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Quad</div>
           <h3>Region: US</h3>
           <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="9929204">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Quad Monthly</div>
           <h3>Region: US</h3>
           <p>Wipes: Force Wipe @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="14402055">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Duo</div>
           <h3>Region: US</h3>
           <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="11580473">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Duo Monthly</div>
           <h3>Region: US</h3>
           <p>Wipes: Force Wipe @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="17157520">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Trio</div>
           <h3>Region: US</h3>
           <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="9896806">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Quad</div>
           <h3>Region: US</h3>
           <p>Wipes: Wednesday & Saturday @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="11132682">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Quad Monthly</div>
           <h3>Region: US</h3>
           <p>Wipes: Force Wipe @ 2PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="32029581">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge5x">5X No BPs</div>
           <h3>Region: US</h3>
           <p>Wipes: Tuesday & Friday @ 3PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="15396333">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge10x">10X No BPs</div>
           <h3>Region: US</h3>
           <p>Wipes: Tuesday & Friday @ 3PM EST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="9972071">Online: Loading...</p>
         </div>
         <div class="screenshot-all-btn-wrapper">
           <button class="screenshot-all-btn" onclick="captureTab('us-tab')">📸 Take screenshot of the US Servers</button>
@@ -105,40 +131,54 @@
       <!-- EU SERVERS -->
       <div class="tab-content-wrapper">
         <div class="tab-content" id="eu-tab">
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Duo</div>
           <h3>Region: EU</h3>
           <p>Wipes: Sunday & Thursday @ 2PM GMT</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="13947074">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Trio</div>
           <h3>Region: EU</h3>
           <p>Wipes: Monday & Friday @ 2PM GMT</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="5589149">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge2x">2X Quad</div>
           <h3>Region: EU</h3>
           <p>Wipes: Wednesday & Saturday @ 2PM GMT</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="13663705">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Duo</div>
           <h3>Region: EU</h3>
           <p>Wipes: Sunday & Thursday @ 2PM GMT</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="18036513">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Trio</div>
           <h3>Region: EU</h3>
           <p>Wipes: Monday & Friday @ 2PM GMT</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="8161581">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Quad</div>
           <h3>Region: EU</h3>
           <p>Wipes: Wednesday & Saturday @ 2PM GMT</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="18025027">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge10x">10X No BPs</div>
           <h3>Region: EU</h3>
           <p>Wipes: Wednesday & Saturday @ 2PM GMT</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="13947951">Online: Loading...</p>
         </div>
         <div class="screenshot-all-btn-wrapper">
           <button class="screenshot-all-btn" onclick="captureTab('eu-tab')">📸 Take screenshot of the EU Servers</button>
@@ -148,20 +188,26 @@
       <!-- AU SERVERS -->
       <div class="tab-content-wrapper">
         <div class="tab-content" id="au-tab">
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Trio</div>
           <h3>Region: AU</h3>
           <p>Wipes: Monday & Friday @ 3PM AEST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="21396139">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge3x">3X Quad</div>
           <h3>Region: AU</h3>
           <p>Wipes: Wednesday & Saturday @ 3PM AEST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="21980928">Online: Loading...</p>
         </div>
-        <div class="server-card" onclick="captureCard(this)">
+        <div class="server-card">
           <div class="badge10x">10X No BPs</div>
           <h3>Region: AU</h3>
           <p>Wipes: Monday & Friday @ 2PM AEST</p>
+          <p class="ip-address">IP: Loading...</p>
+          <p class="player-count" data-bm-id="32077462">Online: Loading...</p>
         </div>
         <div class="screenshot-all-btn-wrapper">
           <button class="screenshot-all-btn" onclick="captureTab('au-tab')">📸 Take screenshot of the AU Servers</button>

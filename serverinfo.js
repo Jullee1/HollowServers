@@ -1,5 +1,12 @@
-// Redirect if not logged in
-if (localStorage.getItem("loggedIn") !== "true") {
+const expires = localStorage.getItem("loginExpires");
+
+if (
+  localStorage.getItem("loggedIn") !== "true" ||
+  !expires ||
+  Date.now() > parseInt(expires)
+) {
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("loginExpires");
   window.location.href = "index.html";
 }
 
@@ -8,33 +15,63 @@ function goHome() {
   window.location.href = "dashboard.html";
 }
 
-if (localStorage.getItem("loggedIn") !== "true") {
-  window.location.href = "index.html";
-}
-
-function goHome() {
-  window.location.href = "dashboard.html";
-}
-
 function showTab(region) {
   const allTabs = document.querySelectorAll(".tab-content");
   const allButtons = document.querySelectorAll(".tab-btn");
 
-  allTabs.forEach(tab => {
-    tab.style.display = "none";
-  });
-
-  allButtons.forEach(btn => {
-    btn.classList.remove("active");
-  });
+  allTabs.forEach(tab => tab.style.display = "none");
+  allButtons.forEach(btn => btn.classList.remove("active"));
 
   document.getElementById(`${region}-tab`).style.display = "flex";
   document.querySelector(`.tab-btn[onclick*="${region}"]`).classList.add("active");
 }
 
 window.onload = () => {
-  showTab('us'); // Default tab
+  showTab('us');
+  fetchPlayerCounts(); // initial load
+  setInterval(fetchPlayerCounts, 120000); // refresh every 120 seconds
 };
+
+async function fetchPlayerCounts() {
+  const countElements = document.querySelectorAll(".player-count");
+
+  for (const el of countElements) {
+    const serverId = el.dataset.bmId;
+    if (!serverId) continue;
+
+    try {
+      const res = await fetch(`https://api.battlemetrics.com/servers/${serverId}`);
+      if (!res.ok) throw new Error(`Server ${serverId} not found`);
+      const data = await res.json();
+
+      const { players, maxPlayers, ip, port } = data?.data?.attributes || {};
+      el.textContent = `Online: ${players} / ${maxPlayers}`;
+      el.style.color = "#93ff95";
+
+      const ipElement = el.parentElement.querySelector('.ip-address');
+      if (ipElement) {
+        if (ip && port) {
+          ipElement.innerHTML = `IP: <span class="copy-ip" title="Click to copy connect ${ip}:${port}" data-connect="connect ${ip}:${port}" style="color: #bbb; cursor: pointer; text-decoration: underline;">${ip}:${port}</span>`;
+        } else {
+          ipElement.textContent = "IP: Unavailable";
+          ipElement.style.color = "#ff6666";
+        }
+      }
+    } catch (err) {
+      console.error(`Failed to fetch data for server ${serverId}`, err);
+      el.textContent = "Online: Unavailable";
+      el.style.color = "#ff6666";
+
+      const ipElement = el.parentElement.querySelector('.ip-address');
+      if (ipElement) {
+        ipElement.textContent = "IP: Unavailable";
+        ipElement.style.color = "#ff6666";
+      }
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 300)); // Wait 300ms between requests
+  }
+}
 
 function captureCard(cardElement) {
   const clone = cardElement.cloneNode(true);
@@ -110,3 +147,28 @@ function captureTab(tabId) {
     });
   });
 }
+
+document.addEventListener('click', function (e) {
+  // ✅ Handle clicking the IP to copy "connect <ip>:<port>"
+  if (e.target.classList.contains('copy-ip')) {
+    e.stopPropagation(); // prevent card click if needed
+    const command = e.target.dataset.connect;
+
+    navigator.clipboard.writeText(command)
+      .then(() => {
+        const originalText = e.target.textContent;
+        e.target.textContent = "Copied!";
+        setTimeout(() => {
+          e.target.textContent = originalText;
+        }, 1000);
+      })
+      .catch(err => console.error("Clipboard copy failed:", err));
+    return;
+  }
+
+  // ✅ Handle shift+click on server card to capture
+  const card = e.target.closest('.server-card');
+  if (card && e.shiftKey) {
+    captureCard(card);
+  }
+});

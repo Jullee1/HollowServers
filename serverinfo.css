@@ -62,7 +62,7 @@ footer {
 
 .main-content {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .main-content h1 {
@@ -73,7 +73,7 @@ footer {
 .subtext {
   font-size: 18px;
   color: #bbbbbb;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .server-cards {
@@ -307,3 +307,15 @@ footer {
 .screenshot-all-btn:hover {
   background-color: #505875;
 }
+
+.player-count {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.ip-address {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
