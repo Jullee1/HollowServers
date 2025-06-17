@@ -331,3 +331,9 @@ footer {
   border-radius: 0 0 0 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+
+.group-limit,
+.group-limit strong {
+  color: #8bbaff !important;
+}
+
