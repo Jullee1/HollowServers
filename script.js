@@ -1,20 +1,35 @@
-function login(event) {
-  event.preventDefault(); // Prevent form reload
+const auth = firebase.auth();
 
-  const username = document.getElementById("username").value.trim();
+function login(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
   const errorMessage = document.getElementById("error-message");
 
-  if (username === "administrator" && password === "hollowservers") {
-    localStorage.setItem("loggedIn", "true");
+  auth.signInWithEmailAndPassword(email, password)
+    .then(userCredential => {
+      localStorage.setItem("loggedIn", "true");
 
-    // Set expiration to 2 hours from now
-    const expiresAt = Date.now() + 2 * 60 * 60 * 1000;
-    localStorage.setItem("loginExpires", expiresAt.toString());
+      const expiresAt = Date.now() + 2 * 60 * 60 * 1000;
+      localStorage.setItem("loginExpires", expiresAt.toString());
 
-    window.location.href = "dashboard.html";
-  } else {
-    errorMessage.style.color = "var(--error)";
-    errorMessage.textContent = "Invalid username or password.";
-  }
+      window.location.href = "dashboard.html";
+    })
+    .catch(error => {
+      errorMessage.style.color = "var(--error)";
+      
+      let message = "Login failed: Invalid credentials";
+
+      if (error.code === "auth/user-not-found") {
+        message = "Login failed: No such user";
+      } else if (error.code === "auth/wrong-password") {
+        message = "Login failed: Incorrect password";
+      } else if (error.code === "auth/invalid-email") {
+        message = "Login failed: Invalid email format";
+      }
+
+      errorMessage.textContent = message;
+      console.error(error.code, error.message); // Optional: log actual error for debugging
+    });
 }

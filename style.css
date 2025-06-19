@@ -133,3 +133,11 @@ header {
 .logout-button:hover {
   background-color: #505875;
 }
+
+.logindesc {
+  color: gray;
+}
+
+.footerdesc {
+  color: gray;
+}

@@ -152,3 +152,6 @@ main {
   background-color: var(--box);
 }
 
+.footerdesc {
+  color: gray;
+}

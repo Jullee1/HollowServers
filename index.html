@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HollowServers - Login</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC6sa7xNhlc5hdKqnUizQlr4p9UWIs208g",
+      authDomain: "hollowserversstaff.firebaseapp.com",
+      projectId: "hollowserversstaff",
+      storageBucket: "hollowserversstaff.appspot.com",
+      messagingSenderId: "130211141003",
+      appId: "1:130211141003:web:2fdec691697e89697e0b8e",
+      measurementId: "G-6B8TYYFVFE"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </head>
 <body>
   <header>
@@ -13,10 +30,11 @@
 
   <main>
     <div class="login-box">
-      <h2>Staff Login</h2>
+      <h2>HollowServers - Staff Login</h2>
+      <p class="logindesc">Login credentials will be received from the Administrators.</p>
       <form onsubmit="login(event)">
         <div class="input-group">
-          <input type="text" id="username" placeholder="Username" required />
+          <input type="email" id="username" placeholder="Email" required />
         </div>
         <div class="input-group">
           <input type="password" id="password" placeholder="Password" required />
@@ -28,7 +46,7 @@
   </main>
 
   <footer>
-    <p></p>
+    <p class="footerdesc">HollowServers - Staff Dashboard</p>
   </footer>
 
   <script src="script.js"></script>
