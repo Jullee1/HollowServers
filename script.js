@@ -30,6 +30,6 @@ function login(event) {
       }
 
       errorMessage.textContent = message;
-      console.error(error.code, error.message); // Optional: log actual error for debugging
+      console.error(error.code, error.message);
     });
 }
