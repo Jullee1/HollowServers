@@ -7,7 +7,7 @@ if (
 ) {
   localStorage.removeItem("loggedIn");
   localStorage.removeItem("loginExpires");
-  window.location.href = "../login.html";
+  window.location.href = "../index.html";
 }
 
 // Back to dashboard
