@@ -7,13 +7,13 @@ if (
 ) {
   localStorage.removeItem("loggedIn");
   localStorage.removeItem("loginExpires");
-  window.location.href = "index.html";
+  window.location.href = "../login.html";
 }
 
 function logout() {
   localStorage.removeItem("loggedIn");
   localStorage.removeItem("loginExpires");
-  window.location.href = "index.html";
+  window.location.href = "../login.html";
 }
 
 function goTo(tab) {

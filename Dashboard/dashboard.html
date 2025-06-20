@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HollowServers - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="../hollowserverslogo.png" alt="Logo" class="logo" />
+      <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-content">
+      <h1>Welcome, Staff-Member</h1>
+      <p class="subtext">Your dashboard tools:</p>
+
+      <!-- Moderation Handbook -->
+      <div class="top-card">
+        <a href="#" class="card handbook-card">
+          <div class="icon-circle large">
+            <i data-lucide="book-open"></i>
+          </div>
+          <div class="text-block">
+            <h2>Moderation Handbook</h2>
+            <p class="card-desc">All rules, policies & procedures in one place.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Dashboard cards -->
+      <div class="card-grid grid-3x2">
+        <div class="card square-card">
+          <div class="icon-circle"><i data-lucide="server"></i></div>
+          <h3>Server Info</h3>
+        </div>
+        <div class="card square-card">
+          <div class="icon-circle"><i data-lucide="message-square-dashed"></i></div>
+          <h3>Ticket Responses</h3>
+        </div>
+        <div class="card square-card">
+          <div class="icon-circle"><i data-lucide="file-text"></i></div>
+          <h3>FAQ Snippets</h3>
+        </div>
+        <div class="card square-card comingsoon">
+          <div class="icon-circle"><i data-lucide="clock"></i></div>
+          <h3>Coming Soon...</h3>
+        </div>
+        <div class="card square-card comingsoon">
+          <div class="icon-circle"><i data-lucide="clock"></i></div>
+          <h3>Coming Soon...</h3>
+        </div>
+        <div class="card square-card comingsoon">
+          <div class="icon-circle"><i data-lucide="clock"></i></div>
+          <h3>Coming Soon...</h3>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footerdesc">HollowServers - Staff Dashboard</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

@@ -7,12 +7,12 @@ if (
 ) {
   localStorage.removeItem("loggedIn");
   localStorage.removeItem("loginExpires");
-  window.location.href = "index.html";
+  window.location.href = "../login.html";
 }
 
 // Back to dashboard
 function goHome() {
-  window.location.href = "dashboard.html";
+  window.location.href = "../Dashboard/dashboard.html";
 }
 
 const faqList = document.getElementById('faq-list');
