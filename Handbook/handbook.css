@@ -1,0 +1,66 @@
+:root {
+  --bg: #1a1d30;
+  --box: #23273f;
+  --header-footer: #151827;
+  --accent: #3f465e;
+  --text: #ffffff;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+header, footer {
+  background-color: var(--header-footer);
+  text-align: center;
+  padding: 20px;
+  position: sticky;
+  z-index: 1000;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+  margin-top: auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 100px;
+}
+
+.back-button {
+  position: absolute;
+  top: 40px;
+  right: 35px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #505875;
+}
+
+.footerdesc {
+  color: gray;
+}
